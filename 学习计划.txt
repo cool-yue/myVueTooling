@@ -1,0 +1,12 @@
+1.自己写一个webpack的loader和plugin
+2.把elementUI源码过
+3.研究下Vue的源码(主要看核心部分)
+4.研究下node的process，cluster机制
+5.单页应用那本书要看看，对架构有一定的理解
+6.mongoDB，noSql的使用
+7.http权威指南中的没看完的章节
+8.前端测试，node测试,自动化，端到端，单元测试
+9.ESLint的使用
+10.express的源码，主要看别人的架构，如何实现一个
+app.use()来插入中间件
+11.koa的源码，主要对比下与express的区别，引入了哪些新特性
