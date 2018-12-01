@@ -1,0 +1,30 @@
+@charset "utf8";
+/* layout style */
+*{
+    margin:0;
+    padding:0;
+    border:0;
+}
+.layout {
+    background-color:#d3dce6;
+}
+
+.el-header {
+    background-color:#b3c0d1;
+}
+.el-aside {
+    background-color:#d3dce6;
+}
+.el-main {
+    background-color:#e9eef3
+}
+html {
+    height:100%;
+}
+body {
+    height:100%;
+}
+body > .el-container {
+    height:100%;
+    margin:0 auto;
+}
