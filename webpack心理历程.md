@@ -151,5 +151,14 @@ plugin:<br/>
 loader比较简单，plugin有点复杂，下一步任务是能够切换development和production之间的配置，至于lint，test以后再说吧。
 ## 展望续 ##
 这里把lint和test整合进webpack。
+### 遇到的几个坑 ###
+这里先配置了vuex和vue-router，这2个插件相对较为简单，首先vue-router中的<route-view>这个标签需要用到运行时的vue.js,原因是单纯地引入vue的话，通过源码的分析可以知道，源码是npm拆分了很多文件，<route-view>需要在运行时的函数去解析，webpack环境中打包的过程实际上仅仅分析依赖，在打包的过程中运行时的complier还不能用，所以在alias里面把vue的路径换成了vue/dist/vue.esm.js这个路径，这个文件属于打包后的vue文件，该有的方法都会有
 ### 配置eslint ###
-首先需要有eslint-loader,npm install  eslint-loader --save-dev,
+首先需要有eslint-loader,npm install  eslint-loader --save-dev,eslint首先要解决的就是import是保留字，import blablabla souceType，，这些的解决方式，就是在eslintrc中首先加入env:{es6:true,node:true},然后再加上一个parse:barbel-eslint,最后说在后面的是eslint，babel-eslint必须全局安装，这样才可以--fix,但是目前的问题在于，并没有很好的很直观的错误提示。
+### 配置babel ###
+首先按照官方文档配置，但是babel需要7.00版本的，后来就安装了一个babl e7.0 bridgeXXX类似于这个包npm install babel-core@7.0.0-bridge.0 --save-dev,这样就解决了需要bable 7.00的版本，网上还有人说，以后babel都需要用@babelXXX，所以把babel开头的都替换掉，然而这种方式还没试，不过前面一个方法已经能解决问题。
+### 配置karmar ###
+
+## 配置build环境 ##
+### 配置uglify ###
+### 其他的优化还没想到 ###

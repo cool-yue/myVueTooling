@@ -20,11 +20,19 @@ module.exports = {
     module:{
         rules:[
             {
-                 test:/\.js$/,
-                 exclude:/node_modules/,
-                 use:'babel-loader'
+                test:/\.js$/,
+                exclude:/node_modules/,
+                use:'babel-loader'
             },
-            {test:/\.vue$/,use:'vue-loader'},
+            {
+                test:/\.js$/,
+                exclude:/node_modules/,
+                use:'eslint-loader'
+            },
+            {
+                test:/\.vue$/,
+                use:'vue-loader'
+            },
             {
                 test:/\.(jpg|JPG)$/,
                 use:[{
@@ -84,6 +92,7 @@ module.exports = {
     ],
     resolve:{
         alias:{
+           'vue': 'vue/dist/vue.esm.js',
             com:path.resolve(__dirname,'./src/component'),
             pic:path.resolve(__dirname,'./static/img')
         }
@@ -120,5 +129,5 @@ Object.assign(module.exports,devSeverConfig);
 // Object.assign(config,devSeverConfig);
 // console.log(process.env.NODE_ENV);
 // webpack(config,(err,stat) => {
-//     console.log(process.env.NODE_ENV);
+// console.log(process.env.NODE_ENV);
 // });
